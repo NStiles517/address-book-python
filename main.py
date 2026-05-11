@@ -1,6 +1,6 @@
 # Code Your Import statments below to import your Contacts class as well as your search and sorting functions (you will build these yourself!!!!):
-from algorithms import *
-from phone_information import *
+from phone_information import Contact
+from algorithms import quick_sort, binary_search
 # ---------------------------------------- DO NOT MODIFY THE CODE BELOW THIS LINE ! IF YOU MODIFY THE BELOW CODE YOU WILL GET A 0 ! ---------------------------------------- #
 # THIS CODE IS NECESSARY TO RUN YOUR FILES! 
 #these imports let us create fake data below
@@ -30,5 +30,18 @@ contact_list = [person1, person2, person3, person4, person5, person6, person7, p
 # THE LIST HAS BEEN SHUFFLED. THIS WILL BE RANDOM EVERY TIME. YOU HAVE NO IDEA WHERE ANY CONTACT IS!
 random.shuffle(contact_list)
 # ---------------------------------------- DO NOT MODIFY THE CODE ABOVE THIS LINE ! IF YOU MODIFY THE ABOVE CODE YOU WILL GET A 0 ! ---------------------------------------- #
-print(contact_list)
+print("press 1 to sort the contact list, press 2 to search for Stephen Colbert's phone number")
+user_input = input("enter your choice here: ")
+if user_input == "1":
+  quick_sort(contact_list)
+  for contact in contact_list:
+    print(contact.first_name, contact.last_name, contact.phone_number)
+elif user_input == "2":
+  index = binary_search(contact_list, 0, len(contact_list) - 1, person11)
+  if index != -1:
+    print("Stephen Colbert's phone number is:", contact_list[index].phone_number)
+  else:
+    print("Stephen Colbert was not found in the contact list.")
+else:
+  print("invalid input, please try again")
 # Code the remainder of your program below. See assignment for requirements.
