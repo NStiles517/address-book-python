@@ -1,13 +1,15 @@
 # Code Your Import statments below to import your Contacts class as well as your search and sorting functions (you will build these yourself!!!!):
-from phone_information import Contact
-from algorithms import quick_sort, binary_search
+
 # ---------------------------------------- DO NOT MODIFY THE CODE BELOW THIS LINE ! IF YOU MODIFY THE BELOW CODE YOU WILL GET A 0 ! ---------------------------------------- #
 # THIS CODE IS NECESSARY TO RUN YOUR FILES! 
 #these imports let us create fake data below
 #if the import does not work, open your Terminal and type: pip install Faker
+from algorithms import binary_search, quick_sort
 from faker import Faker
 # random lets the contact_list be extra shuffled so you can do your sorting algorithm
 import random
+
+from phone_information import Contact
 #fake lets us create fake data
 fake = Faker()
 
@@ -30,6 +32,8 @@ contact_list = [person1, person2, person3, person4, person5, person6, person7, p
 # THE LIST HAS BEEN SHUFFLED. THIS WILL BE RANDOM EVERY TIME. YOU HAVE NO IDEA WHERE ANY CONTACT IS!
 random.shuffle(contact_list)
 # ---------------------------------------- DO NOT MODIFY THE CODE ABOVE THIS LINE ! IF YOU MODIFY THE ABOVE CODE YOU WILL GET A 0 ! ---------------------------------------- #
+
+# Code the remainder of your program below. See assignment for requirements.
 while user_input != 4:
   print("Press 1 to show all contacts list, Press 2 to add a contact, Press 3 to search for a specific contact, Press 4 to QUIT")
   user_input = input("enter your choice here: ")
@@ -38,15 +42,29 @@ while user_input != 4:
     for contact in contact_list:
       print(contact.first_name, contact.last_name, contact.phone_number)
   elif user_input == "2":
-    
-  elif user_input == "3":
-    index = binary_search(contact_list, 0, len(contact_list) - 1, person11)
-    if index != -1:
-    print("Stephen Colbert's phone number is:", contact_list[index].phone_number)
+    if len(contact_list) >= 20:
+      print("Sorry, you cannot add more than 20 contacts.")
     else:
-    print("Stephen Colbert was not found in the contact list.")
-elif user_input == "4":
+      first_name = input("Enter the first name of the contact: ")
+      last_name = input("Enter the last name of the contact: ")
+      phone_number = input("Enter the phone number of the contact: ")
+      new_contact = Contact(first_name, last_name, phone_number)
+      contact_list.append(new_contact)
+      quick_sort(contact_list)
+      print("Contact added successfully.")
+
+  elif user_input == "3":
+    print("Please enter the first name and last name of the contact you want to search for.")
+    first_name = input("First name: ")
+    last_name = input("Last name: ")
+    target_contact = Contact(first_name, last_name, "")
+    index = binary_search(contact_list, 0, len(contact_list) - 1, target_contact)
+    if index != -1:
+        print(target_contact.first_name + " " + target_contact.last_name + "'s phone number is:", contact_list[index].phone_number)
+    else:
+        print("That contact was not found in the contact list.")
   
-  else:
-  print("invalid input, please try again")
-# Code the remainder of your program below. See assignment for requirements.
+  elif user_input == "4":
+    print("Goodbye!")  
+else:
+   print("invalid input, please try again")
