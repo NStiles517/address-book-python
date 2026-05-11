@@ -30,18 +30,23 @@ contact_list = [person1, person2, person3, person4, person5, person6, person7, p
 # THE LIST HAS BEEN SHUFFLED. THIS WILL BE RANDOM EVERY TIME. YOU HAVE NO IDEA WHERE ANY CONTACT IS!
 random.shuffle(contact_list)
 # ---------------------------------------- DO NOT MODIFY THE CODE ABOVE THIS LINE ! IF YOU MODIFY THE ABOVE CODE YOU WILL GET A 0 ! ---------------------------------------- #
-print("press 1 to sort the contact list, press 2 to search for Stephen Colbert's phone number")
-user_input = input("enter your choice here: ")
-if user_input == "1":
-  quick_sort(contact_list)
-  for contact in contact_list:
-    print(contact.first_name, contact.last_name, contact.phone_number)
-elif user_input == "2":
-  index = binary_search(contact_list, 0, len(contact_list) - 1, person11)
-  if index != -1:
+while user_input != 4:
+  print("Press 1 to show all contacts list, Press 2 to add a contact, Press 3 to search for a specific contact, Press 4 to QUIT")
+  user_input = input("enter your choice here: ")
+  if user_input == "1":
+    quick_sort(contact_list)
+    for contact in contact_list:
+      print(contact.first_name, contact.last_name, contact.phone_number)
+  elif user_input == "2":
+    
+  elif user_input == "3":
+    index = binary_search(contact_list, 0, len(contact_list) - 1, person11)
+    if index != -1:
     print("Stephen Colbert's phone number is:", contact_list[index].phone_number)
-  else:
+    else:
     print("Stephen Colbert was not found in the contact list.")
-else:
+elif user_input == "4":
+  
+  else:
   print("invalid input, please try again")
 # Code the remainder of your program below. See assignment for requirements.
