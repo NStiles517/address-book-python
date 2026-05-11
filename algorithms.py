@@ -26,7 +26,7 @@ def quick_recurse(contact_list, left, right):
 def quick_sort(contact_list):
    quick_recurse(contact_list, 0, len(contact_list) - 1)
 
-def binary_search(contact_list, lower_index, upper_index, target_contact);
+def binary_search(contact_list, lower_index, upper_index, target_contact):
   if lower_index <= upper_index:
     midpoint_index = (lower_index + upper_index) // 2
 
@@ -37,13 +37,10 @@ def binary_search(contact_list, lower_index, upper_index, target_contact);
     if contact_list[midpoint_index] == target_contact:
       return midpoint_index
 
-    elif (contact_list [midpoint_index] > target_contact:
+    elif (contact_list [midpoint_index] > target_contact):
       return binary_search(contact_list, lower_index, midpoint_index - 1, target_contact)
 
     else:
       return binary_search(contact_list, midpoint_index + 1, upper_index, target_contact)
-
-return -1
-
-
-  
+    
+  return -1
