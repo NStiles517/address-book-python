@@ -1,6 +1,6 @@
 # Code Your Import statments below to import your Contacts class as well as your search and sorting functions (you will build these yourself!!!!):
 from algorithms import *
-from phone_
+from phone_information import *
 # ---------------------------------------- DO NOT MODIFY THE CODE BELOW THIS LINE ! IF YOU MODIFY THE BELOW CODE YOU WILL GET A 0 ! ---------------------------------------- #
 # THIS CODE IS NECESSARY TO RUN YOUR FILES! 
 #these imports let us create fake data below
@@ -30,5 +30,5 @@ contact_list = [person1, person2, person3, person4, person5, person6, person7, p
 # THE LIST HAS BEEN SHUFFLED. THIS WILL BE RANDOM EVERY TIME. YOU HAVE NO IDEA WHERE ANY CONTACT IS!
 random.shuffle(contact_list)
 # ---------------------------------------- DO NOT MODIFY THE CODE ABOVE THIS LINE ! IF YOU MODIFY THE ABOVE CODE YOU WILL GET A 0 ! ---------------------------------------- #
-
+print(contact_list)
 # Code the remainder of your program below. See assignment for requirements.
