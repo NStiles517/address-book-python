@@ -32,7 +32,7 @@ def binary_search(contact_list, lower_index, upper_index, target_contact);
 
     print("lower index:", lower_index)
     print("upper index:", upper_index)
-    print("midpoint index:", mipoint_index)
+    print("midpoint index:", midpoint_index)
 
     if contact_list[midpoint_index] == target_contact:
       return midpoint_index
